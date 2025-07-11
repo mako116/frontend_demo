@@ -43,18 +43,37 @@ import { login } from '@/utils/auth'
 import { ref } from 'vue'
 import { useRouter } from 'vue-router'
  
+// const email = ref('')
+// const password = ref('')
+// const rememberMe = ref(false)
+// const router = useRouter()
+
+// const handleLogin = async () => {
+//   try {
+//     await login(email.value, password.value)
+//     router.push('/dashboard')
+//   } catch (err) {
+//     alert('Invalid credentials')
+//   }
+// }
+
 const email = ref('')
 const password = ref('')
 const rememberMe = ref(false)
 const router = useRouter()
 
 const handleLogin = async () => {
-  try {
-    await login(email.value, password.value)
-    router.push('/dashboard')
-  } catch (err) {
-    alert('Invalid credentials')
+  if (!email.value || !password.value) {
+    alert('Please enter both email and password')
+    return
   }
+
+   setTimeout(() => {
+    // Fake login not a real one 
+    // real is above uncommented
+    console.log('Demo login success with', { email: email.value, password: password.value })
+    router.push('/dashboard')
+  }, 500)  
 }
 </script>
 

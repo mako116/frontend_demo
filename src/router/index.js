@@ -12,10 +12,10 @@ const routes = [
     path: '/dashboard',
     name: 'Dashboard',
     component: DashboardPage,
-    beforeEnter: (to, from, next) => {
-      if (!token()) next('/')
-      else next()
-    }
+    // beforeEnter: (to, from, next) => {
+    //   if (!token()) next('/')
+    //   else next()
+    // }
   }
 ]
 
